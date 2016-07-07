@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/data/jpa 
+		http://www.springframework.org/schema/data/jpa/spring-jpa-2.1.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<!-- Definition for textEditor bean using inner bean -->
+	<!-- 
+	<bean id="textEditor" class="di.TestEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="di.SpellChecker"></bean>
+		</property>
+	</bean> 
+	-->
+	
+	<!-- Definition for javaCollection -->
+	<!-- <bean id="javaCollection" class='study.JavaCollection'>
+	
+		results in a setAddressList(java.util.List) call
+		<property name="addressList">
+			<list>
+				<value>INDIA</value>
+				<value>Pakistan</value>
+				<value>USA</value>
+				<value>USA</value>
+			</list>
+		</property>
+		
+		results in a setAddressSet(java.util.Set) call
+		<property name="addressSet">
+			<set>
+				<value>INDIA</value>
+				<value>Pakistan</value>
+				<value>USA</value>
+				<value>USA</value>
+			</set>
+		</property>
+		
+		results in a setAddressMap(java.util.Map) call
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="INDIA"/>
+				<entry key="2" value="Pakistan"/>
+				<entry key="3" value="USA"/>
+				<entry key="4" value="USA"/>
+			</map>
+		</property>
+		
+		results in a setAddressProp(java.util.Properties) call
+		<property name="addressProp">
+			<props>
+				<prop key="one">INDIA</prop>
+				<prop key="two">Pakistan</prop>
+				<prop key="three">USA</prop>
+				<prop key="four">USA</prop>
+			</props>
+		</property>
+	</bean> -->
+	
+	<!-- Definition for student bean -->
+	<!-- <bean id="student" class="annotation.Required.Student">
+		<property name="name" value="Zara"></property>
+		<property name="age" value="32"></property>
+	</bean> 
+	-->
+	
+	<bean id="textEditor" class="annotation.Autowired.TextEditor"></bean>
+	<bean id="spellChecker" class="annotation.Autowired.SpellChecker"></bean>
+	
+</beans>
